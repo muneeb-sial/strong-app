@@ -1,10 +1,20 @@
-import { Stack } from "expo-router";
 import "../global.css";
-import { PortalHost } from "@rn-primitives/portal"
+import { Slot } from "expo-router";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
+import { Toaster } from "sonner-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-export default function RootLayout() {
-  return <>
-    <Stack />
-    <PortalHost />
-  </>;
+const queryClient = new QueryClient();
+export default function Layout() {
+  return (
+    <>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <QueryClientProvider client={queryClient}>
+          <Toaster />
+          <Slot />
+        </QueryClientProvider>
+      </GestureHandlerRootView>
+    </>
+  );
 }

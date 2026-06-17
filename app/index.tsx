@@ -1,18 +1,23 @@
-import { Button } from "@/src/components/ui/button";
-import { Text } from "@/src/components/ui/text";
-import { View } from "react-native";
- 
-export default function App() {
+import { View, Text, Button } from "react-native";
+import { Link } from "expo-router";
+import { toast } from "sonner-native";
+
+const Main = () => {
   return (
-    <View className="flex-1 items-center justify-center">
-      <Text className="text-xl font-bold text-blue-500">
-        Welcome to Nativewind!
-      </Text>
-      <Button className="w-full bg-black active:bg-black active:scale-90 transition-all duration-75">
-        <Text className="text-white">
-          Click me!
-        </Text>
-      </Button>
+    <View className="flex-1 items-center justify-center bg-white">
+      <Text>Main</Text>
+      <Link href={"/exercises/list-all"} asChild>
+        <Button title="Go to Exercises" />
+      </Link>
+      <Button
+        title="toast check"
+        onPress={() => {
+          toast.success("toast check");
+          console.log("toast check");
+        }}
+      />
     </View>
   );
-}
+};
+
+export default Main;
