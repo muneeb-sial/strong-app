@@ -1,0 +1,25 @@
+import axios from 'axios';
+import { 
+   {{pascalCase routeName}}RequestType,
+   {{pascalCase routeName}}ResponseType,
+   {{pascalCase routeName}}Type,
+  } from './{{routeName}}.type';
+
+export const {{pascalCase routeName}}Service = {
+  create: async (data: {{pascalCase routeName}}RequestType) => {
+    const res = await axios.post<{{pascalCase routeName}}ResponseType>('/{{routeName}}', data);
+    return res.data;
+  },
+  read: async (id: string) => {
+    const res = await axios.get<{{pascalCase routeName}}ResponseType>(`/{{routeName}}/${id}`);
+    return res.data;
+  },
+  update: async (id: string, data: {{pascalCase routeName}}RequestType) => {
+    const res = await axios.put<{{pascalCase routeName}}ResponseType>(`/{{routeName}}/${id}`, data);
+    return res.data;
+  },
+  delete: async (id: string) => {
+    const res = await axios.delete<{{pascalCase routeName}}ResponseType>(`/{{routeName}}/${id}`);
+    return res.data;
+  },
+};
