@@ -1,10 +1,8 @@
 import { ExerciseZodSchema } from "./exercise.schema";
 import { toast } from "sonner-native";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { ExerciseType } from "@/db/schema.type";
 import { router } from "expo-router";
-import { useFormMutation } from "@/shared/hook/useFormMutationHook";
-import { useExerciseRepo } from "@/services/exercise.service";
+import { useFormMutation } from "@/src/shared/hook/useFormMutationHook";
 
 export const useCreateExercise = (props: { debugMode?: boolean }) => {
   const { createExerciseInstance } = useExerciseRepo();

@@ -1,9 +1,8 @@
-import { Button, ButtonText } from "@/components/ui/button";
-import { useWorkoutStore } from "@/store/workout.store";
 import { Stack } from "expo-router";
-import { Text } from "react-native";
-import { useWorkoutRepo } from "@/features/workouts/workout.service";
-import { toast } from "sonner-native";
+import { useWorkoutRepo } from "@/src/features/workouts/workout.service";
+import { useWorkoutStore } from "@/src/store/workout.store";
+import { Button } from "../components/ui/button";
+import { Text } from "../components/ui/text";
 
 export default function WorkoutLayout() {
   const hook = useWorkoutStore();
@@ -24,14 +23,11 @@ export default function WorkoutLayout() {
             <>
               <Button
                 onPress={() => {
-                  console.log("Save");
-                  toast.success("sdsd");
                   const payload = hook.FinishWorkoutReturn();
-                  console.log({ payload });
                   if (payload) createWorkoutInstance(payload);
                 }}
               >
-                <ButtonText>Save</ButtonText>
+                <Text>Save</Text>
               </Button>
             </>
           ),

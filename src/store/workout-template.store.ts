@@ -1,5 +1,5 @@
-import { TemplateFormType, WorkOutItemTemplateSchemaType } from "@/features/workouts/workout.schema";
 import { create } from "zustand";
+import { TemplateFormType, WorkOutItemTemplateSchemaType } from "../features/workouts/workout.schema";
 
 type WorkoutTemplateStore = {
   workoutTemplate: TemplateFormType;

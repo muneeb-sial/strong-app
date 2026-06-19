@@ -1,5 +1,5 @@
-import { BodyPartEnum, ExerciseCategoryEnum } from "@/db/schema.type";
-import { capitalize, convertEnumToLabel } from "../utils";
+import { capitalize, convertEnumToLabel } from "@/src/lib/utils";
+import { BodyPartEnum, ExerciseCategoryEnum } from "./db-data.";
 
 export const bodyPartData: string[] = [
     BodyPartEnum.CHEST,

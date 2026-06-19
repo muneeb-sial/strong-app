@@ -25,13 +25,13 @@ const TabButton = ({
 };
 
 export const MainNavigationTabsLayout = () => {
-  const tabs: Array<{
+  const tabs: {
     name: string;
     title: string;
     options?: BottomTabNavigationOptions
     headerRight?: () => React.ReactNode;
     renderIcon: (isFocused: boolean) => React.ReactNode;
-  }> = [
+  }[] = [
     {
       name: "profile/index",
       title: "Profile",

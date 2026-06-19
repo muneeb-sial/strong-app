@@ -1,5 +1,5 @@
-import {ListAllExerciseHeaderRight} from "@/features/exercise/headers/list-all-exercise.header";
-import SearchExerciseHeader from "@/features/exercise/headers/search-exercise.header";
+import {ListAllExerciseHeaderRight} from "@/src/features/exercise/headers/list-all-exercise.header";
+import SearchExerciseHeader from "@/src/features/exercise/headers/search-exercise.header";
 import { Stack } from "expo-router";
 
 export default function ExerciseLayout() {

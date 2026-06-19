@@ -1,13 +1,11 @@
-import React from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useFormMutation } from "@/shared/hook/useFormMutationHook";
+import { useFormMutation } from "@/src/shared/hook/useFormMutationHook";
 import { toast } from "sonner-native";
 import { router } from "expo-router";
 import {
   WorkoutTemplateSchema,
 } from "./workout.schema";
-import { useWorkoutTemplateRepo } from "@/services/workout-template.service";
-import { useWorkoutTemplateStore } from "@/store/workout-template.store";
+import { useWorkoutTemplateStore } from "@/src/store/workout-template.store";
 
 export const useWorkout = (props: { debugMode?: boolean }) => {
   const {createWorkoutTemplate} = useWorkoutTemplateRepo();

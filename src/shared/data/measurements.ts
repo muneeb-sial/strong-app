@@ -1,5 +1,5 @@
-import { BodyPartEnum } from "@/db/schema.type";
-import { capitalize, convertEnumToLabel } from "../utils";
+import { capitalize, convertEnumToLabel } from "@/src/lib/utils";
+import { BodyPartEnum } from "./db-data.";
 
 export const measurementBodyPartData: string[] = [
     "WEIGHT",

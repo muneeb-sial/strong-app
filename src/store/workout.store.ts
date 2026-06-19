@@ -1,10 +1,9 @@
-import { SetTypeEnum } from "@/db/schema.type";
-import { SetsSchemaType, WorkOutItemSchemaType, WorkoutSchema, WorkoutSchemaType } from "@/features/workouts/workout.schema";
-import { useWorkoutRepo } from "@/features/workouts/workout.service";
 // import { createWorkoutInstance } from "@/features/workouts/workout.service";
 import { toast } from "sonner-native";
 import { create } from "zustand";
 import { router } from "expo-router";
+import { SetsSchemaType, WorkOutItemSchemaType, WorkoutSchemaType } from "../features/workouts/workout.schema";
+import { SetTypeEnum } from "../shared/data/db-data.";
 
 type WorkoutStore = {
   workout: WorkoutSchemaType;
