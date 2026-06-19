@@ -3,9 +3,11 @@ import { toast } from "sonner-native";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { router } from "expo-router";
 import { useFormMutation } from "@/src/shared/hook/useFormMutationHook";
+import { ExerciseService } from "./exercise.service";
+import { ExerciseType } from "@/src/shared/data/db-data.";
 
 export const useCreateExercise = (props: { debugMode?: boolean }) => {
-  const { createExerciseInstance } = useExerciseRepo();
+  const { createExerciseInstance } = ExerciseService;
   const queryClient = useQueryClient();
   const hook = useFormMutation({
     mutationFn: createExerciseInstance,
@@ -28,7 +30,7 @@ export const useCreateExercise = (props: { debugMode?: boolean }) => {
 };
 
 export const useGetAllExercise = () => {
-  const { getAllExercises } = useExerciseRepo();
+  const { getAllExercises } = ExerciseService;
   const { data, isLoading, error } = useQuery<ExerciseType[]>({
     queryKey: ["exercises-all"],
     queryFn: getAllExercises,
@@ -37,12 +39,12 @@ export const useGetAllExercise = () => {
 };
 
 export const useGetExerciseById = (id: string) => {
-  const { getExerciseById } = useExerciseRepo();
+  const { getExerciseById } = ExerciseService;
   return { data:getExerciseById(id), isLoading: false, error: null, refetch: () => {} };
 };
 
 export const useSearchExercises = (searchQuery: string) => {
-  const { searchExercises } = useExerciseRepo();
+  const { searchExercises } = ExerciseService;
   const { data, isLoading, error } = useQuery<ExerciseType[]>({
     queryKey: ["exercises-search", searchQuery],
     queryFn: () => searchExercises(searchQuery),

@@ -1,10 +1,11 @@
-import { View, Text, ScrollView, ActivityIndicator } from "react-native";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import React from "react";
-import { Button, ButtonText } from "@/components/ui/button";
-import { FormInputSelect } from "@/shared/ui/FormInputSelect";
-import { bodyPartData, exerciseCategoryData } from "@/shared/data/exercise";
+import { Button,  } from "@/src/components/ui/button";
+import { bodyPartData, exerciseCategoryData } from "@/src/shared/data/exercise";
 import { useCreateExercise } from "../useExercise";
-import { FormInput } from "@/shared/ui/FormInput";
+import { FormInput } from "@/src/components/inputs/FormInput";
+import { FormInputSelect } from "@/src/components/inputs/FormInputSelect";
+import { Text } from "@/src/components/ui/text";
 
 export const ExerciseCreateScreen = () => {
   const { form, mutation, onSubmit } = useCreateExercise({ debugMode: false });
@@ -38,10 +39,9 @@ export const ExerciseCreateScreen = () => {
           disabled={mutation.isPending}
           variant={"default"}
           className="bg-black mt-4 rounded-full active:scale-90 duration-300 data-[active=true]:bg-black/70 transition-all"
-          size="xl"
           onPress={form.handleSubmit(onSubmit)}
         >
-          <ButtonText className="text-white">Submit</ButtonText>
+          <Text className="text-white">Submit</Text>
           {mutation.isPending && <ActivityIndicator size="small" color="white" />}
         </Button>
       </View>

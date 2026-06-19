@@ -1,6 +1,6 @@
 import { View, Text, TouchableNativeFeedback } from "react-native";
 import { ExerciseZodSchemaType } from "../exercise.schema";
-import { capitalize, convertEnumToLabel } from "@/shared/utils";
+import { capitalize, convertEnumToLabel } from "@/src/lib/utils";
 
 type Props = {
   exercise: ExerciseZodSchemaType;

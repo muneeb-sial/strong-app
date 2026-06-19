@@ -1,7 +1,7 @@
 import { View, FlatList, ActivityIndicator } from "react-native";
-import { useExerciseSearchStore } from "@/store/exercsie-search.store";
 import { useGetAllExercise, useSearchExercises } from "../useExercise";
 import ExerciseItem from "../components/ExerciseItem";
+import { useExerciseSearchStore } from "@/src/store";
 
 export const SearchExercisesScreen = () => {
   const { searchQuery } = useExerciseSearchStore();

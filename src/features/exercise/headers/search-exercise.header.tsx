@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { View } from "react-native";
-import { useDebounce } from "@/shared/hook/useDebounce";
-import { Input, InputField } from "../../../components/ui/input";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { useExerciseSearchStore } from "@/store/exercsie-search.store";
+import { useDebounce } from "@/src/shared/hook/useDebounce";
+import { useExerciseSearchStore } from "@/src/store";
+import { Input } from "@/src/components/ui/input";
 
 const SearchExerciseHeader = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,20 +18,11 @@ const SearchExerciseHeader = () => {
     <View className="w-full flex-row items-center gap-3 mr-10">
       <View className="flex-1">
         <Input
-          variant="outline"
-          size="md"
+          placeholder="Search exercises..."
+          value={searchQuery}
+          onChangeText={(e) => setSearchQuery(e)}
           className="rounded-2xl  border-slate-400 border text-base placeholder:text-gray-400 data-[focus=true]:border-gray-800 "
-          isDisabled={false}
-          isInvalid={false}
-          isReadOnly={false}
-        >
-          <InputField
-          className="text-black"
-            placeholder="Search exercises..." 
-            value={searchQuery}
-            onChangeText={(e) => setSearchQuery(e)}
-          />
-        </Input>
+        />
       </View>
 
       <FontAwesome5 name="filter" size={20} />
